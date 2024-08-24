@@ -17,7 +17,7 @@
         <div class="container">
             <div class="box">
                 <h2>Title</h2>
-                <ul>
+                <ul id="items">
                     <li>item</li>
                     <li>item1</li>
                     <li>item1</li>
@@ -28,25 +28,51 @@
             </div>
             <div class="box">
                 <h2>Title</h2>
-                <ul>
-                    <li>bring</li>
-                    <li>item1</li>
-                    <li>item1</li>
+                <ul id="activities">
+                    <li>bring <button onclick="moveItem('activities', 'itinerary', this)">→</button> </li>
+                    <li>item1 <button onclick="moveItem('activities', 'itinerary', this)">→</button> </li>
+                    <li>item1 <button onclick="moveItem('activities', 'itinerary', this)">→</button> </li>
                 </ul>
             </div>
             <div class="box">
                 <h2>Title</h2>
-                <ul>
-                    <li>item1</li>
-                    <li>item</li>
-                    <li>item1</li>
-                    <li>item1</li>
-                    <li>item1</li>
-                    <li>item1</li>
-                    <li>item1</li>
+                <ul id="itinerary">
+                    <li>item1 <button onclick="moveItem('itinerary', 'activities', this)">←</button> </li>
+                    <li>item2 <button onclick="moveItem('itinerary', 'activities', this)">←</button> </li>
+                    <li>item1 <button onclick="moveItem('itinerary', 'activities', this)">←</button> </li>
+                    <li>item1 <button onclick="moveItem('itinerary', 'activities', this)">←</button> </li>
+                    <li>item1 <button onclick="moveItem('itinerary', 'activities', this)">←</button> </li>
+                    <li>item1 <button onclick="moveItem('itinerary', 'activities', this)">←</button> </li>
+                    <li>item1 <button onclick="moveItem('itinerary', 'activities', this)">←</button> </li>
                 </ul>
             </div>
         </div>
+        <script>
+            function moveItem(fromListId, toListId, button) {
+                // get the item to be moved (the parent <li> of the button) [item sticks with the button]
+                const item = button.parentElement;
+                
+                // determine the new button text and function
+                const newButtonText = fromListId === 'activities' ? '←' : '→';  // if fromID == activities, show that it can be moved to itinerary, vice versa
+                const newButtonFunction = fromListId === 'activities'
+                    ? `moveItem('itinerary', 'activities', this)`               //move from itinerary to activities if fromID is not activities
+                    : `moveItem('activities', 'itinerary', this)`;              //else activities -> itinerary
+                
+                
+                // update the button's text (to switch arrows)
+                button.textContent = newButtonText;
+
+                /*
+                    determines what will happen when the button is clicked
+                    in this case, call newButtonFunction which determines where the item is moved to
+                */
+                button.setAttribute('onclick', newButtonFunction);
+                
+                
+                // append moved item to new list (will add to bottom of list)
+                document.getElementById(toListId).appendChild(item);
+            }
+        </script>
     </body>
 
 </html>

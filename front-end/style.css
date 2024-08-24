@@ -1,3 +1,7 @@
+html {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -15,8 +19,9 @@ body {
 }
 
 #search-bar input {
-    height: 20px;
+    height: 50px;
     width: 1000px;
+    font-size: 30px;
 }
 
 
@@ -44,6 +49,13 @@ h2 {
     text-align: center;
     margin: 0 0 15px 0; /* Adds space between the heading and the list */
     font-size: 1.5em;
+}
+
+button {
+    margin-left: 10px;
+    color: black;
+    background-color: lightblue;
+    border: groove;
 }
 
 /*
