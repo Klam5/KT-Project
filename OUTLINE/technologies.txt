@@ -1,0 +1,81 @@
+FRONT-END
+    HTML5:
+        Purpose: Structuring the web pages.
+        How: HTML will be used to create the basic layout of the website, 
+            including forms for user input (e.g., selecting destinations, activities), 
+            sections for displaying lists and itineraries, and navigation menus.
+
+    CSS3:
+        Purpose: Styling and responsive design.
+        How: CSS will be used to style the HTML elements, ensuring the website 
+            is visually appealing and user-friendly. It will also be used for 
+            responsive design to ensure the site looks good on all devices, 
+            from mobile phones to desktops.
+
+    JavaScript (ES6+):
+        Purpose: Frontend interactivity and logic.
+        How: JavaScript will handle the dynamic aspects of the web app, such as 
+            updating the packing list based on selected activities or destinations, 
+            adding/removing items from the itinerary, and managing user interactions 
+            with the web page.
+    
+    React.js:
+        Purpose: Building the user interface (UI) with reusable components.
+        How: React will be used to create a dynamic and responsive user interface. 
+            It will allow for the creation of reusable components 
+            (e.g., packing list items, activity cards) and efficient management 
+            of state within the application.
+
+    Bootstrap or Tailwind CSS:
+        Purpose: UI design framework.
+        How: A CSS framework like Bootstrap or Tailwind will speed up the design 
+            process by providing pre-styled components (buttons, modals, forms) 
+            and grid systems for responsive layouts.
+
+BACK END
+    Node.js with Express.js:
+        Purpose: Server-side logic and routing.
+        How: Node.js will serve as the runtime environment for the backend, 
+            while Express.js will handle routing, API requests, and middleware. 
+            This combination will be used to manage user authentication, 
+            handle form submissions, and communicate with the database.
+
+    MongoDB (with Mongoose):
+        Purpose: NoSQL database for storing user data, itineraries, and packing lists.
+        How: MongoDB will store and retrieve user information, selected destinations, 
+            custom packing lists, and itineraries. Mongoose will be used to model 
+            this data and provide an easy-to-use interface for database operations.
+
+    Python (with BeautifulSoup/Scrapy):
+        Purpose: Web scraping.
+        How: Python scripts will be used to scrape data from travel websites 
+            to gather information on must-see activities and local conditions 
+            for various destinations. The scraped data will be stored in MongoDB 
+            or processed in real-time for user queries.
+
+    RESTful API:
+        Purpose: Communication between frontend and backend.
+        How: RESTful APIs will be designed to allow the frontend to communicate 
+            with the backend, particularly for tasks like fetching packing lists, 
+            updating itineraries, and retrieving scraped data.
+
+    Firebase (for Authentication):
+        Purpose: User authentication.
+        How: Firebase will manage user sign-up, login, and authentication 
+            processes. It will handle user sessions securely and store 
+            authentication data.
+
+DEPLOYMENT / HOSTING
+
+    Heroku or Vercel:
+        Purpose: Hosting the web application.
+        How: The complete web application will be deployed to a platform 
+            like Heroku or Vercel. This will allow for continuous 
+            deployment (CI/CD), automatic scaling, and easy management of 
+            environment variables.
+
+    Netlify:
+        Purpose: Hosting static frontend files.
+        How: If the frontend and backend are deployed separately, Netlify 
+            could host the static files (HTML, CSS, JS) for the frontend, 
+            ensuring fast and reliable delivery.
