@@ -6,11 +6,13 @@
         <title>Traveler</title>
 
         <link href="style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.min.css" />
+
     </head>
 
     <body>
         <header id="search-bar">
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="Search..." id="myinput"/>
         </header>
         
         
@@ -47,32 +49,8 @@
                 </ul>
             </div>
         </div>
-        <script>
-            function moveItem(fromListId, toListId, button) {
-                // get the item to be moved (the parent <li> of the button) [item sticks with the button]
-                const item = button.parentElement;
-                
-                // determine the new button text and function
-                const newButtonText = fromListId === 'activities' ? '←' : '→';  // if fromID == activities, show that it can be moved to itinerary, vice versa
-                const newButtonFunction = fromListId === 'activities'
-                    ? `moveItem('itinerary', 'activities', this)`               //move from itinerary to activities if fromID is not activities
-                    : `moveItem('activities', 'itinerary', this)`;              //else activities -> itinerary
-                
-                
-                // update the button's text (to switch arrows)
-                button.textContent = newButtonText;
-
-                /*
-                    determines what will happen when the button is clicked
-                    in this case, call newButtonFunction which determines where the item is moved to
-                */
-                button.setAttribute('onclick', newButtonFunction);
-                
-                
-                // append moved item to new list (will add to bottom of list)
-                document.getElementById(toListId).appendChild(item);
-            }
-        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.min.js"></script>
+        <script src="script.js"></script>
     </body>
 
 </html>
