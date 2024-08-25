@@ -24,6 +24,10 @@ body {
     font-size: 30px;
 }
 
+#search-bar::placeholder {
+    font-size: 5px;
+}
+
 
 .container {
     display: flex;

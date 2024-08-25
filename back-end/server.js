@@ -5,12 +5,12 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
-// Serve static files from the "frontend" directory
+// Serve static files from the "front-end" directory
 app.use(express.static(path.join(__dirname, '../front-end')));
 
 // Route to serve the JSON data
-app.get('/api/cities', (req, res) => {
-    res.sendFile(path.join(__dirname, 'data', 'cities.json'));
+app.get('/api/places', (req, res) => {
+    res.sendFile(path.join(__dirname, 'data', 'places.json'));
 });
 
 // Catch-all route to serve the main HTML file
