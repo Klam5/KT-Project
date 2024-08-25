@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
 html {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -9,23 +11,51 @@ body {
     align-items: center;
     height: 100vh;
     overflow-x: hidden;
+    background-color: #8d97ff;
 }
 
-#search-bar {
-    text-align: center;
-    padding: 20px;
-    font-size: 17px;
-    border-radius: 50px;
-}
-
-#search-bar input {
+.input-box {
+    position: relative;
     height: 50px;
-    width: 1000px;
+    max-width: 900px;
+    width: 100%;
+    background: #fff;
+    margin: 0 20px;
+    border-radius: 25px;
+    /* Modified box-shadow to include shadow at the top */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1), 
+                0px -4px 10px rgba(0, 0, 0, 0.05);
+    top: 10px;
+}
+  .input-box i
+  {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .input-box i {
+    left: 20px;
     font-size: 30px;
+    color: #707070;
+  }
+  .input-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    padding: 0 155px 0 23px; /* Set proper padding */
+    background-color: transparent;
+    position: relative;
+    top: -33px; /* Move the input field up by 10px */
 }
 
-#search-bar::placeholder {
-    font-size: 5px;
+  .awesomplete {
+    position: relative; /* Ensure it's positioned relative to the input box */
+    top: 100%; /* Position it directly below the input */
+    left: 40px; /* Align it with the left side of the input */
+    width: 100%; /* Make it the same width as the input */
 }
 
 
@@ -38,6 +68,8 @@ body {
     width: auto;
     min-height: 450px;
     height: auto;
+    top: 20px;
+    position: relative;
 }
 
 .box1, .box2, .box3 {
