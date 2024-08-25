@@ -12,7 +12,7 @@
 
     <body>
         <header id="search-bar">
-            <input type="text" placeholder="Search" id="myinput"/>
+            <input type="text" placeholder="Search..." id="myinput"/>
         </header>
         
         
@@ -31,41 +31,27 @@
             <div class="box2">
                 <h2>Title</h2>
                 <ul id="activities">
-                    <li>bring 
-                        <button class='button' onclick="moveItem('activities', 'itinerary', this)">
-                        →
-                            <div class="hover-content">
-                                <img src="https://via.placeholder.com/150" alt="Image">
-                                <p>HOVERING BUTTON</p>
-                            </div>
-                        </button>
-                    </li>
-                    <li>item1
-                        <button class='button' onclick="moveItem('activities', 'itinerary', this)">
-                            →
-                            <div class="hover-content">
-                                <img src="https://via.placeholder.com/150" alt="Image">
-                                <p>HOVERING BUTTON</p>
-                            </div>
-                        </button>
-                    </li>
-                    <li>item1 <button onclick="moveItem('activities', 'itinerary', this)">→</button> </li>
+                    <li draggable="true">bring</li>
+                    <li draggable="true">item1</li>
+                    <li draggable="true">item1</li>
                 </ul>
             </div>
             <div class="box3">
                 <h2>Title</h2>
                 <ul id="itinerary">
-                    <li>item1 <button onclick="moveItem('itinerary', 'activities', this)">←</button> </li>
-                    <li>item2 <button onclick="moveItem('itinerary', 'activities', this)">←</button> </li>
-                    <li>item1 <button onclick="moveItem('itinerary', 'activities', this)">←</button> </li>
-                    <li>item1 <button onclick="moveItem('itinerary', 'activities', this)">←</button> </li>
-                    <li>item1 <button onclick="moveItem('itinerary', 'activities', this)">←</button> </li>
-                    <li>item1 <button onclick="moveItem('itinerary', 'activities', this)">←</button> </li>
-                    <li>item1 <button onclick="moveItem('itinerary', 'activities', this)">←</button> </li>
+                    <li draggable="true">item1</li>
+                    <li draggable="true">item2</li>
+                    <li draggable="true">item1</li>
+                    <li draggable="true">item1</li>
+                    <li draggable="true">item1</li>
+                    <li draggable="true">item1</li>
+                    <li draggable="true">item1</li>
                 </ul>
             </div>
         </div>
+        
 
+        
 
         <!-- images -->
 

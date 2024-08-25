@@ -25,6 +25,54 @@ function moveItem(fromListId, toListId, button) {
     document.getElementById(toListId).appendChild(item);
 };
 
+
+
+
+// Function to handle dragging
+function handleDragStart(event) {
+    event.target.classList.add('dragging'); // Add dragging class
+}
+
+// handle dragging over the drop zone
+function handleDragOver(event) {
+    event.preventDefault();
+    event.currentTarget.classList.add('drag-over');
+}
+
+// handle drag leave (when dragged item leaves the drop zone)
+function handleDragLeave(event) {
+    event.currentTarget.classList.remove('drag-over');
+}
+
+// handle dropping the item
+function handleDrop(event) {
+    event.preventDefault();
+    const draggingElement = document.querySelector('.dragging');
+    event.currentTarget.classList.remove('drag-over');
+    event.currentTarget.appendChild(draggingElement);
+    
+}
+
+// Attach event listeners
+document.querySelectorAll('li').forEach(item => {
+    item.addEventListener('dragstart', handleDragStart);
+    // item.addEventListener('dragend', function() {
+    //     // Remove dragging class when drag ends (in case it wasn't dropped)
+    //     item.classList.remove('dragging');
+    // });
+});
+
+document.querySelectorAll('ul').forEach(list => {
+    
+    list.addEventListener('dragover', handleDragOver);
+    list.addEventListener('dragleave', handleDragLeave);
+    list.addEventListener('drop', handleDrop);
+});
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
     var input = document.getElementById("myinput");
 
@@ -59,4 +107,6 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .catch(error => console.error('Error loading places:', error));
 });
+
+
 

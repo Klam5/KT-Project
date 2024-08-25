@@ -1,5 +1,6 @@
 html {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* background-color: black; */
 }
 
 body {
@@ -15,19 +16,20 @@ body {
     text-align: center;
     padding: 20px;
     font-size: 17px;
-    border-radius: 50px;
+    
 }
 
 #search-bar input {
     height: 50px;
     width: 1000px;
     font-size: 30px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
 }
 
 #search-bar::placeholder {
     font-size: 5px;
 }
-
 
 .container {
     display: flex;
@@ -57,50 +59,9 @@ h2 {
     font-size: 1.5em;
 }
 
-button {
-    margin-left: 10px;
-    color: black;
-    background-color: lightblue;
-    border: groove;
-    cursor: pointer;
-    position: relative;
-    font-size: 16px;
-
+.dragging {
+    background-color: transparent;
 }
-
-
-/* Text and image container */
-.hover-content {
-    display: none;
-    position: absolute;
-    top: 50px; /* Adjust position as needed */
-    left: 0;
-    background-color: #fff;
-    padding: 10px;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    z-index: 100;
-    width: 200px; /* Adjust width as needed */
-}
-
-/* Show the content on hover */
-.button:hover .hover-content {
-    display: block;
-}
-
-/* Image styling */
-.hover-content img {
-    width: 100%; /* Adjust image size */
-    height: auto;
-}
-
-/* Text styling */
-.hover-content p {
-    margin: 10px 0 0;
-    font-size: 14px;
-    color: #333;
-}
-
 
 
 /*
