@@ -5,3 +5,8 @@ Kyle:
     - later implemented drag and drop
         - kinda works but allows drag and drop in/out of "items" list which we do not want, will fix soon
     
+Taedon:
+    - search bar + aesthetics
+    - destination database + search fill using awesomeplete
+
+    
