@@ -1,0 +1,7 @@
+8/25
+
+Kyle: 
+    - added buttons to move items between lists (eventually removed to replace with drag and drop)
+    - later implemented drag and drop
+        - kinda works but allows drag and drop in/out of "items" list which we do not want, will fix soon
+    
