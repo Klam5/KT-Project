@@ -32,9 +32,11 @@ body {
     padding: 10px;
     margin: 0 auto;
     width: auto;
+    min-height: 450px;
+    height: auto;
 }
 
-.box {
+.box1, .box2, .box3 {
     border: 1px solid purple;
     padding: 15px;
     background-color: lightblue;
@@ -56,7 +58,46 @@ button {
     color: black;
     background-color: lightblue;
     border: groove;
+    cursor: pointer;
+    position: relative;
+    font-size: 16px;
+
 }
+
+
+/* Text and image container */
+.hover-content {
+    display: none;
+    position: absolute;
+    top: 50px; /* Adjust position as needed */
+    left: 0;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    width: 200px; /* Adjust width as needed */
+}
+
+/* Show the content on hover */
+.button:hover .hover-content {
+    display: block;
+}
+
+/* Image styling */
+.hover-content img {
+    width: 100%; /* Adjust image size */
+    height: auto;
+}
+
+/* Text styling */
+.hover-content p {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #333;
+}
+
+
 
 /*
 ul.activities{

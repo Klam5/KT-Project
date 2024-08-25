@@ -17,7 +17,7 @@
         
         
         <div class="container">
-            <div class="box">
+            <div class="box1">
                 <h2>Title</h2>
                 <ul id="items">
                     <li>item</li>
@@ -28,15 +28,31 @@
                     <li>item1</li>
                 </ul>
             </div>
-            <div class="box">
+            <div class="box2">
                 <h2>Title</h2>
                 <ul id="activities">
-                    <li>bring <button onclick="moveItem('activities', 'itinerary', this)">→</button> </li>
-                    <li>item1 <button onclick="moveItem('activities', 'itinerary', this)">→</button> </li>
+                    <li>bring 
+                        <button class='button' onclick="moveItem('activities', 'itinerary', this)">
+                        →
+                            <div class="hover-content">
+                                <img src="https://via.placeholder.com/150" alt="Image">
+                                <p>HOVERING BUTTON</p>
+                            </div>
+                        </button>
+                    </li>
+                    <li>item1
+                        <button class='button' onclick="moveItem('activities', 'itinerary', this)">
+                            →
+                            <div class="hover-content">
+                                <img src="https://via.placeholder.com/150" alt="Image">
+                                <p>HOVERING BUTTON</p>
+                            </div>
+                        </button>
+                    </li>
                     <li>item1 <button onclick="moveItem('activities', 'itinerary', this)">→</button> </li>
                 </ul>
             </div>
-            <div class="box">
+            <div class="box3">
                 <h2>Title</h2>
                 <ul id="itinerary">
                     <li>item1 <button onclick="moveItem('itinerary', 'activities', this)">←</button> </li>
@@ -49,6 +65,14 @@
                 </ul>
             </div>
         </div>
+
+
+        <!-- images -->
+
+        <div>
+
+        </div>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.min.js"></script>
         <script src="script.js"></script>
     </body>
