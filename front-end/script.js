@@ -88,12 +88,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.getElementById('myinput').addEventListener('keypress', function (event) {
     if (event.key === 'Enter' && event.target.value.trim()) {
+        document.getElementById('loading-spinner').style.display = 'block';
         let query = event.target.value.trim();
         fetch(`/getTravelInfo?location=${encodeURIComponent(query)}`)
             .then(response => response.json())
             .then(data => {
                 console.log('API Response:', data);
                 displayTravelInfo(data);
+                document.getElementById('loading-spinner').style.display = 'none';
             })
             .catch(error => console.error('Error:', error));
     }

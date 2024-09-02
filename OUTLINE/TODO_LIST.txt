@@ -1,6 +1,7 @@
 T
-    - Line between search bar and container elements
-    - webscraping -> functional search bar
+    - Fix loading bar
+    - improve parsing 
+    - moving items from activity to itinerary + vice versa
 
 
 
