@@ -1,6 +1,6 @@
 T
     - Line between search bar and container elements
-    - webscraping and functional search bar
+    - webscraping -> functional search bar
 
 
 

@@ -1,70 +1,46 @@
 <!DOCTYPE html>
 
 <html>
+<head>
+    <title>Traveler</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.min.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+</head>
 
-    <head>
-        <title>Traveler</title>
-
-        <link href="style.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.min.css" />
-        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
-
-    </head>
-
-    <body>
-        <header id="search-bar">
-            <div class="input-box">
-                <i class="uil uil-search"></i>
-                <input type="text" placeholder="Search here..." id="myinput" />
-            </div>
-        </header>
-        
-        
-        <div class="container">
-            <div class="box1">
-                <h2>Title</h2>
-                <ul id="items">
-                    <li>item</li>
-                    <li>item1</li>
-                    <li>item1</li>
-                    <li>item1</li>
-                    <li>item1</li>
-                    <li>item1</li>
-                </ul>
-            </div>
-            <div class="box2">
-                <h2>Title</h2>
-                <ul id="activities">
-                    <li draggable="true">bring</li>
-                    <li draggable="true">item1</li>
-                    <li draggable="true">item1</li>
-                </ul>
-            </div>
-            <div class="box3">
-                <h2>Title</h2>
-                <ul id="itinerary">
-                    <li draggable="true">item1</li>
-                    <li draggable="true">item2</li>
-                    <li draggable="true">item1</li>
-                    <li draggable="true">item1</li>
-                    <li draggable="true">item1</li>
-                    <li draggable="true">item1</li>
-                    <li draggable="true">item1</li>
-                </ul>
-            </div>
+<body>
+    <header id="search-bar">
+        <div class="input-box">
+            <i class="uil uil-search"></i>
+            <input type="text" placeholder="Search Destination" id="myinput" />
         </div>
-        
+    </header>
 
-        
-
-        <!-- images -->
-
-        <div>
-
+    <div class="container">
+        <div class="box1">
+            <h2>Must Bring</h2>
+            <ul id="items">
+            </ul>
         </div>
+        <div class="box2">
+            <h2>Itinerary</h2>
+            <ul id="itinerary">
+            </ul>
+        </div>
+        <div class="box3">
+            <h2>Possible Activities</h2>
+            <ul id="activities">
+            </ul>
+        </div>
+    </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.min.js"></script>
-        <script src="script.js"></script>
-    </body>
+    <!-- images -->
+
+    <div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.min.js"></script>
+    <script src="script.js"></script>
+</body>
 
 </html>
