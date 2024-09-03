@@ -94,10 +94,36 @@ h2 {
 }
 
 
-.dragging {
+
+ul {
+    list-style-type: disc;
+    padding: 5px;
+    border: 0px solid #ccc;
     background-color: transparent;
+    min-height: 200px;
+    flex-grow: 1;
+    height: auto;
 }
 
+ul.drag-over {
+    background-color: transparent; /* shows color of drop area (size of list) */
+    border-color: #007BFF;
+}
+
+li {
+    background-color: transparent; /* changes background color of listed items (made transparent for better looks */
+    cursor: grab;
+    margin-left: 15px;
+}
+
+li.dragging {
+    opacity: 0.5;
+    background-color: #ffcccb;
+}
+
+li:hover {
+    border: solid 1px black;
+}
 
 /*
 ul.activities{

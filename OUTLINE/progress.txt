@@ -8,5 +8,3 @@ Kyle:
 Taedon:
     - search bar + aesthetics
     - destination database + search fill using awesomeplete
-
-    

@@ -1,66 +1,56 @@
 console.log('Script is running');
 
-function moveItem(fromListId, toListId, button) {
-    const item = button.parentElement;
+// drag and drop functions :
 
-    const newButtonText = fromListId === 'activities' ? '←' : '→';
-    const newButtonFunction = fromListId === 'activities'
-        ? `moveItem('itinerary', 'activities', this)`
-        : `moveItem('activities', 'itinerary', this)`;
 
-    button.textContent = newButtonText;
-    button.setAttribute('onclick', newButtonFunction);
+document.addEventListener('DOMContentLoaded', function() {
+    const items = document.querySelectorAll('ul li');
+    const lists = document.querySelectorAll('ul');
 
-    document.getElementById(toListId).appendChild(item);
-}
-
-function handleDragStart(event) {
-    event.target.classList.add('dragging');
-}
-
-function handleDragOver(event) {
-    event.preventDefault();
-    event.currentTarget.classList.add('drag-over');
-}
-
-function handleDragLeave(event) {
-    event.currentTarget.classList.remove('drag-over');
-}
-
-function handleDrop(event) {
-    event.preventDefault();
-    const draggingElement = document.querySelector('.dragging');
-    event.currentTarget.classList.remove('drag-over');
-    event.currentTarget.appendChild(draggingElement);
-}
-
-function attachDragAndDropListeners() {
-    document.querySelectorAll('ul').forEach(list => {
-        // Only allow dropping in "itinerary" or "activities"
-        if (list.id === 'itinerary' || list.id === 'activities') {
-            list.addEventListener('dragover', handleDragOver);
-            list.addEventListener('dragleave', handleDragLeave);
-            list.addEventListener('drop', handleDrop);
-        }
+    items.forEach(item => {
+        item.addEventListener('dragstart', handleDragStart);
+        item.addEventListener('dragend', handleDragEnd);
+        item.setAttribute('draggable', 'true'); // make all <li> elements are draggable
     });
 
-    document.querySelectorAll('li').forEach(item => {
-        // Only allow dragging from "itinerary" or "activities"
-        const parentId = item.parentElement.id;
-        if (parentId === 'itinerary' || parentId === 'activities') {
-            item.setAttribute("draggable", "true");
-            item.addEventListener('dragstart', handleDragStart);
-            item.addEventListener('dragend', function () {
-                item.classList.remove('dragging');
-            });
-        } else {
-            item.setAttribute("draggable", "false");
-        }
+    lists.forEach(list => {
+        list.addEventListener('dragover', handleDragOver);
+        list.addEventListener('dragleave', handleDragLeave);
+        list.addEventListener('drop', handleDrop);
     });
-}
+
+    function handleDragStart(event) {
+        event.target.classList.add('dragging');
+    }
+
+    function handleDragEnd(event) {
+        event.target.classList.remove('dragging');
+    }
+
+    function handleDragOver(event) {
+        event.preventDefault(); // Necessary to allow dropping
+        event.currentTarget.classList.add('drag-over');
+    }
+
+    function handleDragLeave(event) {
+        event.currentTarget.classList.remove('drag-over');
+    }
+
+    function handleDrop(event) {
+        event.preventDefault();
+        const draggingElement = document.querySelector('.dragging');
+        event.currentTarget.classList.remove('drag-over');
+        event.currentTarget.appendChild(draggingElement);
+    }
+});
+
+
+
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
-    attachDragAndDropListeners();
+    //attachDragAndDropListeners();
 
     var input = document.getElementById("myinput");
 
@@ -157,5 +147,5 @@ function displayTravelInfo(data) {
         itineraryList.appendChild(li);
     });
 
-    attachDragAndDropListeners();
+    //attachDragAndDropListeners();
 }
