@@ -1,60 +1,48 @@
-console.log('Script is running');
+// Global drag and drop functions
+function handleDragStart(event) {
+    event.target.classList.add('dragging');
+}
 
-// drag and drop functions :
+function handleDragEnd(event) {
+    event.target.classList.remove('dragging');
+}
+
+function handleDragOver(event) {
+    event.preventDefault(); // Necessary to allow dropping
+    event.currentTarget.classList.add('drag-over');
+}
+
+function handleDragLeave(event) {
+    event.currentTarget.classList.remove('drag-over');
+}
+
+function handleDrop(event) {
+    event.preventDefault();
+    const draggingElement = document.querySelector('.dragging');
+    event.currentTarget.classList.remove('drag-over');
+    event.currentTarget.appendChild(draggingElement);
+}
 
 document.addEventListener('DOMContentLoaded', function() {
-
-    // only allows drag and drop between activities and itinerary lists
+    // Drag and drop initialization
     const items = document.querySelectorAll('.activities li, .itinerary li');
     const lists = document.querySelectorAll('.activities, .itinerary');
 
     items.forEach(item => {
-        // adds dragstart, dragend, and draggable(true) to all items in a list allowing functions for start and end dragging
         item.addEventListener('dragstart', handleDragStart);
         item.addEventListener('dragend', handleDragEnd);
-        item.setAttribute('draggable', 'true'); // make all <li> elements are draggable
+        item.setAttribute('draggable', 'true');
     });
 
     lists.forEach(list => {
-        // adds dragover, dragleave, and drop to all lists allowing user to drag and drop into other lists
         list.addEventListener('dragover', handleDragOver);
         list.addEventListener('dragleave', handleDragLeave);
         list.addEventListener('drop', handleDrop);
     });
-
-    function handleDragStart(event) {
-        event.target.classList.add('dragging');
-    }
-
-    function handleDragEnd(event) {
-        event.target.classList.remove('dragging');
-    }
-
-    function handleDragOver(event) {
-        event.preventDefault(); // Necessary to allow dropping
-        event.currentTarget.classList.add('drag-over');
-    }
-
-    function handleDragLeave(event) {
-        event.currentTarget.classList.remove('drag-over');
-    }
-
-    function handleDrop(event) {
-        event.preventDefault();
-        const draggingElement = document.querySelector('.dragging');
-        event.currentTarget.classList.remove('drag-over');
-        event.currentTarget.appendChild(draggingElement);
-    }
 });
 
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
-    //attachDragAndDropListeners();         when uncommented, moves search bar text for some reason
-
+    // Search and Autocomplete initialization
     var input = document.getElementById("myinput");
 
     const awesomplete = new Awesomplete(input, {
@@ -137,7 +125,7 @@ function displayTravelInfo(data) {
         let li = document.createElement('li');
         li.textContent = activity;
         li.setAttribute("draggable", "true");
-        li.addEventListener('dragstart', handleDragStart);
+        li.addEventListener('dragstart', handleDragStart); // `handleDragStart` should now be recognized
         activitiesList.appendChild(li);
     });
 
@@ -146,9 +134,7 @@ function displayTravelInfo(data) {
         let li = document.createElement('li');
         li.textContent = item;
         li.setAttribute("draggable", "true");
-        li.addEventListener('dragstart', handleDragStart);
+        li.addEventListener('dragstart', handleDragStart); // `handleDragStart` should now be recognized
         itineraryList.appendChild(li);
     });
-
-    //attachDragAndDropListeners();
 }
