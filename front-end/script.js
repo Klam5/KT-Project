@@ -2,18 +2,21 @@ console.log('Script is running');
 
 // drag and drop functions :
 
-
 document.addEventListener('DOMContentLoaded', function() {
-    const items = document.querySelectorAll('ul li');
-    const lists = document.querySelectorAll('ul');
+
+    // only allows drag and drop between activities and itinerary lists
+    const items = document.querySelectorAll('.activities li, .itinerary li');
+    const lists = document.querySelectorAll('.activities, .itinerary');
 
     items.forEach(item => {
+        // adds dragstart, dragend, and draggable(true) to all items in a list allowing functions for start and end dragging
         item.addEventListener('dragstart', handleDragStart);
         item.addEventListener('dragend', handleDragEnd);
         item.setAttribute('draggable', 'true'); // make all <li> elements are draggable
     });
 
     lists.forEach(list => {
+        // adds dragover, dragleave, and drop to all lists allowing user to drag and drop into other lists
         list.addEventListener('dragover', handleDragOver);
         list.addEventListener('dragleave', handleDragLeave);
         list.addEventListener('drop', handleDrop);
@@ -50,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    //attachDragAndDropListeners();
+    //attachDragAndDropListeners();         when uncommented, moves search bar text for some reason
 
     var input = document.getElementById("myinput");
 

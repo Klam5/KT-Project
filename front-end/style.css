@@ -27,18 +27,17 @@ body {
 
     top: 10px;
 }
-  .input-box i
-  {
+.input-box i {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-  }
-  .input-box i {
+}
+.input-box i {
     left: 20px;
     font-size: 30px;
-    color: #707070;
-  }
-  .input-box input {
+color: #707070;
+}
+.input-box input {
     height: 100%;
     width: 100%;
     outline: none;
@@ -51,7 +50,7 @@ body {
     top: -33px; /* Move the input field up by 10px */
 }
 
-  .awesomplete {
+.awesomplete {
     position: relative; /* Ensure it's positioned relative to the input box */
     top: 100%; /* Position it directly below the input */
     left: 40px; /* Align it with the left side of the input */
@@ -76,7 +75,7 @@ header {
 
 .box1, .box2, .box3 {
     padding: 15px;
-    background-color: lightblue;
+    background-color: rgb(173, 216, 230); /* lightblue */
     width: 30%;
     box-shadow: -6px 6px rgba(0,0,0,0.1);
     border-radius: 25px;
@@ -94,19 +93,19 @@ h2 {
 }
 
 
-
+/* the following are related to the lists and drag/drop boxes */
 ul {
     list-style-type: disc;
     padding: 5px;
     border: 0px solid #ccc;
-    background-color: transparent;
+    background-color: transparent; /* highlights drop area in all boxes at all times */
     min-height: 200px;
     flex-grow: 1;
     height: auto;
 }
 
 ul.drag-over {
-    background-color: transparent; /* shows color of drop area (size of list) */
+    background-color: rgb(132, 167, 179); /* shows color of drop area when hovering it */
     border-color: #007BFF;
 }
 
@@ -118,7 +117,7 @@ li {
 
 li.dragging {
     opacity: 0.5;
-    background-color: #ffcccb;
+    background-color: rgb(132, 167, 179); /* color of background of item while being dragged (made same color as drag-over */
 }
 
 li:hover {
