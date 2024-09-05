@@ -124,8 +124,13 @@ function displayTravelInfo(data) {
     activities.forEach(activity => {
         let li = document.createElement('li');
         li.textContent = activity;
+
+        // allow all added items to be draggable
         li.setAttribute("draggable", "true");
-        li.addEventListener('dragstart', handleDragStart); // `handleDragStart` should now be recognized
+
+        // dragstart and dragend added to items being appeneded by api allowing for drag and drop in/out of possible activities list
+        li.addEventListener('dragstart', handleDragStart);
+        li.addEventListener('dragend', handleDragEnd);
         activitiesList.appendChild(li);
     });
 
@@ -133,8 +138,13 @@ function displayTravelInfo(data) {
     itinerary.forEach(item => {
         let li = document.createElement('li');
         li.textContent = item;
+
+        // allow all added items to be draggable
         li.setAttribute("draggable", "true");
-        li.addEventListener('dragstart', handleDragStart); // `handleDragStart` should now be recognized
+
+        // dragstart and dragend added to items being appeneded by api allowing for drag and drop in/out of itinerary list
+        li.addEventListener('dragstart', handleDragStart);
+        li.addEventListener('dragend', handleDragEnd);
         itineraryList.appendChild(li);
     });
 }

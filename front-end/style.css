@@ -111,7 +111,6 @@ ul.drag-over {
 
 li {
     background-color: transparent; /* changes background color of listed items (made transparent for better looks */
-    cursor: grab;
     margin-left: 15px;
 }
 
@@ -120,8 +119,9 @@ li.dragging {
     background-color: rgb(132, 167, 179); /* color of background of item while being dragged (made same color as drag-over */
 }
 
-li:hover {
+.box2 li:hover, .box3 li:hover {
     border: solid 1px black;
+    cursor: grab;
 }
 
 /*
